@@ -10,18 +10,16 @@ $color-grey-medium: #7E7E7E;
 $color-grey-light: #EAEAEA;
 
 // TYPOGRAPHIE
-@font-face {
-    font-family: 'Roboto';
-    src: url('../assets/__fonts/Roboto-Bold.ttf') format('truetype'),
-         url('../assets/__fonts/Roboto-Light.ttf') format('truetype'),
-         url('../assets/__fonts/Roboto-Medium.ttf') format('truetype');
-    font-weight: bold, lighter, medium;
-    font-style: normal;
-  }
-  
-@font-face {
-    font-family: 'Shrikhand';
-    src: url('../assets/__fonts/Shrikhand-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Shrikhand';
+
+$font-size-xl: 28px;
+$font-size-l: 24px;
+$font-size-m: 18px;
+$font-size-s: 17px;
+$font-size-xs: 16px;
+
+$font-weight-bold: bold;
+$font-weight-light: lighter;
+$font-weight-medium: medium;
+$font-weight-normal: normal;

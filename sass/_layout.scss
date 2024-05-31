@@ -1,6 +1,37 @@
+.none {
+    display: none;
+}
+
+body {
+    @include flex
+}
+
 .main-container {
-    display: flex;
-    flex-direction: column;
+    @include sizing(100%);
     max-width: 1440px;
     min-width: 320px;
+}
+
+section {
+    padding: 20px;
+}
+
+.hero {
+    background-color: $color-grey-lighter;
+    padding: 2em;
+    @include sizing(100%);
+    @include flex;
+    text-align: center;
+    gap: 1em;
+        &__title {
+            padding: 0 1em;
+        }
+        .cta-btn {
+            margin-top: 1em;
+        }
+}
+
+.restaurants {
+    background-color: $color-grey-lighter;
+    @include sizing(100%);
 }

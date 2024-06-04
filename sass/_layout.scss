@@ -1,37 +1,109 @@
 .none {
-    display: none;
+    display: none
 }
 
-body {
-    @include flex
-}
 
 .main-container {
     @include sizing(100%);
-    max-width: 1440px;
+    max-width: 100vw;
     min-width: 320px;
+    @include position(relative);
+    @include flex(column, center, center);
+
+}
+
+main {
+    @include sizing(100%);
 }
 
 section {
-    padding: 20px;
+    @include sizing(100%);
+    @include flex($gap: 1em);
+    padding: 60px 20px;
+        &:nth-child(2n-1) {
+            background-color: $color-grey-lighter;
+    }
+     }
+
+.section-title {
+    align-self: flex-start
+    }
+
+.card-wrapper {
+    @include sizing(100%);
+    @include flex($gap: 2em);
 }
 
 .hero {
-    background-color: $color-grey-lighter;
     padding: 2em;
-    @include sizing(100%);
-    @include flex;
     text-align: center;
-    gap: 1em;
         &__title {
             padding: 0 1em;
+            align-self: center;
         }
+
         .cta-btn {
             margin-top: 1em;
         }
 }
 
-.restaurants {
+
+
+// MENU LAYOUT
+
+.menu-banner {
+    @include sizing(100%, 275px);
+    object-fit: cover;
+    position: relative;
+}
+
+.menu {
+    @include position(absolute, $top:270px);
     background-color: $color-grey-lighter;
+    border-radius: 25px;
     @include sizing(100%);
+    max-width: 1000px;
+    @include flex(column, flex-start, flex-start);
+    padding: 32px 0;
+        &__header {
+            @include sizing(100%);
+            @include flex(row, space-between);
+            padding: 0 20px
+        }
+
+        .heart-btn {
+            font-size: $font-size-l;
+        }
+
+        &__title {
+            @include font-secondary($font-size-xl, $color-black, $font-weight-normal);
+        
+        }
+
+        &__section {
+            @include flex($align: flex-start);
+        }
+
+
+        .menu__section-title {
+            @include font-primary($font-size-xs, $color-black, $font-weight-light);
+        }
+
+        .title-underline {
+            border-bottom: 2px solid $color-green-light;
+            padding: 0.3em 0;
+        }
+
+        .cta-btn {
+            align-self: center;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+
+        
+}
+
+.menu-footer {
+    @include position(absolute, $top: 100vh);
 }

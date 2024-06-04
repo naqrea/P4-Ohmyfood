@@ -33,11 +33,12 @@
 }
 
 // DISPLAYS
-@mixin flex($direction: column, $justify: center, $align: center) {
+@mixin flex($direction: column, $justify: center, $align: center, $gap: false) {
     display: flex;
     @if $direction { flex-direction: $direction; }
     @if $justify { justify-content: $justify; }
     @if $align { align-items: $align; }
+    @if $gap { gap: $gap; }
 }
 
 @mixin grid($columns: auto, $rows: auto, $gap: 0) {

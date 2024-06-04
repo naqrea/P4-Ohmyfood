@@ -1,7 +1,12 @@
 .header {
+    @include sizing(100%);
     @include flex;
+        .header-icon {
+            @include position(absolute, $top: 1em, $left: 1em);
+            font-size: $font-size-l;
+        }
         &__logo {
-            @include sizing(200px, 36px);
+            @include sizing(160px, 42px);
             margin: 1em;
         }
         &__localisation {
@@ -23,7 +28,45 @@
     @include font-primary($font-size-xs, $color-white, $font-weight-medium);
 }
 
-.card {
+.step-card {
+    background-color: $color-grey-lighter;
+    @include sizing(100%);
+    border-radius: 20px;
+    @include flex(row, center, center);
+    @include position(relative);
+    padding: 28px;
+    box-shadow: 0px 4px 15px 0px #00000026;
+
+        &__content {
+            @include font-primary($font-size-xs, $color-black, $font-weight-medium);
+            @include flex(row, flex-start, center, 12px);
+            @include sizing(100%);
+            text-wrap: nowrap;
+        }
+
+        &__icon {
+            @include sizing(38px);
+            font-size: $font-size-m;
+            color: $color-grey-medium;
+            padding-left: 12px
+        }
+
+        .fa-store {
+            color: $color-purple;
+        }
+
+        &__number {
+            @include flex;
+            @include position(absolute, $top: center, $left: -12px);
+            @include font-primary($font-size-xxs, $color-white, $font-weight-normal);
+            @include sizing(25px, 25px);
+            background-color: $color-purple;
+            border-radius: 25px;
+        }
+}
+
+
+.restaurant-card {
     @include sizing(100%, 250px);
     border-radius: 15px;
     @include position(relative);
@@ -59,3 +102,58 @@
         }
 }
 
+.footer {
+    @include sizing(100%);
+    background-color: $color-grey-dark;
+    padding: 22px;
+        &__title {
+            @include font-secondary($font-size-m, $color-white, $font-weight-normal);
+            padding-bottom: 1em;
+        }
+
+        &__link {
+            @include font-primary($font-size-xs, $color-white, $font-weight-light, 1.8em);
+        }
+
+        .footer-icon {
+            @include sizing(30px)
+        }
+}
+
+
+// MENU COMPONENT
+
+
+.item-card {
+    @include sizing(100%, 72px);
+    border-radius: 15px;
+    box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+    @include flex(row, space-between, center);
+
+    &__content {
+        @include flex(row, space-between, center);
+        @include sizing(100%);
+        padding: 1em;
+    }
+
+    &__title {
+        @include font-primary($font-size-m, $color-black, $font-weight-medium, 1.5em);
+    }
+
+    &__subtitle {
+        @include font-primary($font-size-xs, $color-black, $font-weight-light);
+    }
+
+    &__price {
+        align-self: flex-end;
+        @include font-primary($font-size-xs, $color-black, $font-weight-bold);
+    }
+
+    .select-trigger {
+        background-color: $color-green-light;
+        border-radius: 0 15px 15px 0;
+        @include sizing(60px, 100%);
+        @include flex;
+        color: $color-white;
+    }
+}

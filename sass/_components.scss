@@ -1,3 +1,5 @@
+// HOMEPAGE COMPONENTS
+
 .header {
     @include sizing(100%);
     @include flex;
@@ -36,6 +38,7 @@
     @include position(relative);
     padding: 28px;
     box-shadow: 0px 4px 15px 0px #00000026;
+    cursor: pointer;
 
         &__content {
             @include font-primary($font-size-xs, $color-black, $font-weight-medium);
@@ -49,10 +52,6 @@
             font-size: $font-size-m;
             color: $color-grey-medium;
             padding-left: 12px
-        }
-
-        .fa-store {
-            color: $color-purple;
         }
 
         &__number {
@@ -122,8 +121,6 @@
 
 
 // MENU COMPONENT
-
-
 .item-card {
     @include sizing(100%, 72px);
     border-radius: 15px;
@@ -131,28 +128,37 @@
     @include flex(row, space-between, center);
 
     &__content {
-        @include flex(row, space-between, center);
+        @include flex(row, flex-start, center);
         @include sizing(100%);
-        padding: 1em;
+    }
+
+    &__txt {
+        @include text-truncate;
+        @include flex($align: flex-start);
     }
 
     &__title {
         @include font-primary($font-size-m, $color-black, $font-weight-medium, 1.5em);
+        @include text-truncate;
+        width: 100%;
     }
 
     &__subtitle {
         @include font-primary($font-size-xs, $color-black, $font-weight-light);
+        @include text-truncate;
+        width: 100%;
     }
 
     &__price {
-        align-self: flex-end;
+        place-self: flex-end;
         @include font-primary($font-size-xs, $color-black, $font-weight-bold);
+        padding: 1em;
     }
 
     .select-trigger {
         background-color: $color-green-light;
         border-radius: 0 15px 15px 0;
-        @include sizing(60px, 100%);
+        @include sizing(0px, 100%);
         @include flex;
         color: $color-white;
     }

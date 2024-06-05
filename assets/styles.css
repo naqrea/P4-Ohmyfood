@@ -123,6 +123,7 @@ button {
   position: relative;
   padding: 28px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  cursor: pointer;
 }
 .step-card__content {
   font-family: "Roboto", sans-serif;
@@ -144,9 +145,6 @@ button {
   font-size: 1.125rem;
   color: #7E7E7E;
   padding-left: 12px;
-}
-.step-card .fa-store {
-  color: #9356DC;
 }
 .step-card__number {
   display: flex;
@@ -256,11 +254,19 @@ button {
 .item-card__content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: auto;
-  padding: 1em;
+}
+.item-card__txt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .item-card__title {
   font-family: "Roboto", sans-serif;
@@ -268,24 +274,33 @@ button {
   color: #000000;
   font-weight: 500;
   line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .item-card__subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: #000000;
   font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .item-card__price {
-  align-self: flex-end;
+  place-self: flex-end;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: #000000;
   font-weight: 700;
+  padding: 1em;
 }
 .item-card .select-trigger {
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
-  width: 60px;
+  width: 0px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -359,12 +374,10 @@ section:nth-child(2n-1) {
   width: 100%;
   height: 275px;
   object-fit: cover;
-  position: relative;
 }
 
 .menu {
-  position: absolute;
-  top: 270px;
+  margin-top: -2em;
   background-color: #F6F6F6;
   border-radius: 25px;
   width: 100%;
@@ -416,9 +429,162 @@ section:nth-child(2n-1) {
   padding-right: 60px;
 }
 
-.menu-footer {
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.heart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.heart-btn .heart-fill {
   position: absolute;
-  top: 100vh;
+  top: 0;
+  left: 0;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.heart-btn:hover .heart-fill {
+  opacity: 1;
+  animation: heartbeat 0.4s ease-in-out 0.4s 1 forwards;
+}
+
+.step-card {
+  transition: all 0.4s ease-in-out;
+}
+.step-card .step-card__txt, .step-card .step-card__icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.step-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2078431373);
+  background-color: #EAEAEA;
+}
+.step-card:hover .step-card__txt, .step-card:hover .step-card__icon {
+  color: #9356DC;
+}
+
+.restaurant-card {
+  transition: all 0.4s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.02);
+}
+
+.cta-btn {
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5019607843);
+}
+
+.select-trigger {
+  transition: all 0.4s ease-in-out;
+}
+.select-trigger .check-icon {
+  opacity: 0;
+  font-size: 1.5rem;
+  transform: rotate(90deg);
+  transition: 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.item-card:hover .select-trigger {
+  width: 72px;
+  height: 100%;
+}
+.item-card:hover .check-icon {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.section-entrees .item-card {
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+.section-entrees .item-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.section-entrees .item-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.section-entrees .item-card:nth-child(3) {
+  animation-delay: 0.45s;
+}
+.section-entrees .item-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.section-entrees .item-card:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+.section-plats .item-card {
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+.section-plats .item-card:nth-child(1) {
+  animation-delay: 1.15s;
+}
+.section-plats .item-card:nth-child(2) {
+  animation-delay: 1.3s;
+}
+.section-plats .item-card:nth-child(3) {
+  animation-delay: 1.45s;
+}
+.section-plats .item-card:nth-child(4) {
+  animation-delay: 1.6s;
+}
+.section-plats .item-card:nth-child(5) {
+  animation-delay: 1.75s;
+}
+
+.section-desserts .item-card {
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+.section-desserts .item-card:nth-child(1) {
+  animation-delay: 2.15s;
+}
+.section-desserts .item-card:nth-child(2) {
+  animation-delay: 2.3s;
+}
+.section-desserts .item-card:nth-child(3) {
+  animation-delay: 2.45s;
+}
+.section-desserts .item-card:nth-child(4) {
+  animation-delay: 2.6s;
+}
+.section-desserts .item-card:nth-child(5) {
+  animation-delay: 2.75s;
 }
 
 /*# sourceMappingURL=styles.css.map */

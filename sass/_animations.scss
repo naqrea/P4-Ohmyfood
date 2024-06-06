@@ -103,3 +103,50 @@ $sections: entrees, plats, desserts;
   }
 }
 
+
+
+// Définir une variable de durée dans :root
+
+
+
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include sizing(100%, 100%);
+    @include flex(center, center);
+    background-color: white;
+    z-index: 1000;
+    opacity: 1;
+    animation: fadeOut 2s forwards 1s;
+  
+       .loader {
+        border: 12px solid $color-grey-light; 
+        border-top: 12px solid $color-purple; 
+        border-radius: 50%;
+        @include sizing(92px, 92px);
+        animation: spin 2s ease-in-out infinite;
+  } 
+  }
+  
+  .main-container {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2s;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }  
+  

@@ -587,4 +587,60 @@ section:nth-child(2n-1) {
   animation-delay: 2.75s;
 }
 
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1000;
+  opacity: 1;
+  animation: fadeOut 2s forwards 1s;
+}
+.loader-container .loader {
+  border: 12px solid #EAEAEA;
+  border-top: 12px solid #9356DC;
+  border-radius: 50%;
+  width: 92px;
+  height: 92px;
+  animation: spin 2s ease-in-out infinite;
+}
+
+.main-container {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

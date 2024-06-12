@@ -43,9 +43,6 @@
 }
 
 @mixin grid($columns: auto, $rows: auto, $gap: 0) {
-    $columns: if(type-of($columns) == number, #{$columns}fr, $columns);
-    $rows: if(type-of($rows) == number, #{$rows}fr, $rows);
-    
     display: grid;
     grid-template-columns: $columns;
     grid-template-rows: $rows;
@@ -77,16 +74,16 @@
 // BREAKPOINTS
 @mixin breakpoint($point) {
     @if $point == xl {
-      @media (max-width: 75em) { @content; }
+      @media (min-width: 90em) { @content; }
     }
     @else if $point == minxl {
       @media (min-width: 75em) { @content; }
     }  
     @else if $point == lg {
-      @media (max-width: 62em) { @content; }
+      @media (min-width: 64em) { @content; }
     }
     @else if $point == md {
-      @media (max-width: 48em)  { @content; }
+      @media (min-width: 48em)  { @content; }
     }
     @else if $point == sm {
       @media (max-width: 34em)  { @content; }

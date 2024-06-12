@@ -4,7 +4,6 @@
 
 .main-container {
     @include sizing(100%);
-    max-width: 100vw;
     min-width: 320px;
     @include position(relative);
     @include flex(column, center, center);
@@ -22,6 +21,7 @@ section {
             background-color: $color-grey-lighter;
     }
 }
+
 
 .section-title {
     align-self: flex-start
@@ -51,9 +51,12 @@ section {
 .menu-banner {
     @include sizing(100%, 275px);
     object-fit: cover;
+    position: relative;
+    z-index: -1;
 }
 
 .menu {
+    place-self: center;
     margin-top: -2em;
     background-color: $color-grey-lighter;
     border-radius: 25px;

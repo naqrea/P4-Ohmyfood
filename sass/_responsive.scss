@@ -1,15 +1,60 @@
-// @include breakpoint(minxl) { /* Min 1200px */
-//     /* Add code Here */
-// }
+@include breakpoint(md) {  
+    .menu__header {
+        place-content: center;
+        gap: 1.5em;
+    }
+    .restaurants__cards {
+    @include grid(1fr 1fr, 1fr 1fr, 3em);
+    }
+}
 
-// @include breakpoint(xl) { /* Max 1200px */
+@include breakpoint(lg) {     
+    .steps__tags {
+        @include grid(1fr 1fr 1fr, 1fr, auto);
+    }
 
-// }
+    .step-card {
+        padding: 28px 22px;
+    }
 
-// @include breakpoint(lg) { /* 992px */
+    .restaurants, .steps {
+        padding: 3em 8em;
+    }
 
-// }
+    .menu {
+        padding: 3em 10em;
+    }
 
+    .footer {
+        @include sizing(100%, 112px);
+        @include flex(row-reverse, flex-start, flex-end, 4em);
+        &__title {
+            padding-bottom: 0;
+        }
+        &__list {
+            @include flex(row, flex-end, flex-end, 1em);
+        }
+
+        &__link:nth-child(2) {
+            padding-right: 2em;
+        }
+    }
+
+
+   }
+
+@include breakpoint(minxl) {
+
+    .steps__tags {
+        gap: auto;
+    }
+}
+
+@include breakpoint(xl) {
+    .restaurants__cards {
+        gap: 3em 6em;
+    }
+}
 // @include breakpoint(md) { /* 768px */
 
 // }

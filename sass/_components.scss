@@ -30,6 +30,7 @@
     @include font-primary($font-size-xs, $color-white, $font-weight-medium);
 }
 
+
 .step-card {
     background-color: $color-grey-lighter;
     @include sizing(100%);
@@ -135,6 +136,7 @@
     &__txt {
         @include text-truncate;
         @include flex($align: flex-start);
+        padding-left: 1em;
     }
 
     &__title {

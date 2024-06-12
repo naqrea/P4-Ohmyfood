@@ -10,21 +10,17 @@
 
 @include breakpoint(lg) {     
     .steps__tags {
-        @include grid(1fr 1fr 1fr, 1fr, auto);
+        @include grid(1fr 1fr 1fr, 1fr, 2em);
     }
-
     .step-card {
         padding: 28px 22px;
     }
-
     .restaurants, .steps {
         padding: 3em 8em;
     }
-
     .menu {
         padding: 3em 10em;
     }
-
     .footer {
         @include sizing(100%, 112px);
         @include flex(row-reverse, flex-start, flex-end, 4em);
@@ -34,19 +30,15 @@
         &__list {
             @include flex(row, flex-end, flex-end, 1em);
         }
-
         &__link:nth-child(2) {
             padding-right: 2em;
         }
     }
-
-
-   }
+}
 
 @include breakpoint(minxl) {
-
     .steps__tags {
-        gap: auto;
+        gap: 2em;
     }
 }
 
@@ -55,10 +47,3 @@
         gap: 3em 6em;
     }
 }
-// @include breakpoint(md) { /* 768px */
-
-// }
-
-// @include breakpoint(sm) { /* 575px */
-
-// }

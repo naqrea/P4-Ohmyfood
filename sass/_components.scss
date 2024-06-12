@@ -2,7 +2,7 @@
 
 .header {
     @include sizing(100%);
-    @include flex;
+    @include flex;    
         .header-icon {
             @include position(absolute, $top: 1em, $left: 1em);
             font-size: $font-size-l;
@@ -18,7 +18,7 @@
             @include font-primary($font-size-xs, $color-black, $font-weight-medium);
             padding: 1em 0;
             gap: 1em;
-            box-shadow: 0px 4px 4px 0px #00000040;
+            box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.301);
         }
 }
 
@@ -40,24 +40,21 @@
     padding: 28px;
     box-shadow: 0px 4px 15px 0px #00000026;
     cursor: pointer;
-
         &__content {
             @include font-primary($font-size-xs, $color-black, $font-weight-medium);
             @include flex(row, flex-start, center, 12px);
             @include sizing(100%);
             text-wrap: nowrap;
         }
-
         &__icon {
             @include sizing(38px);
             font-size: $font-size-m;
             color: $color-grey-medium;
             padding-left: 12px
         }
-
         &__number {
             @include flex;
-            @include position(absolute, $top: center, $left: -12px);
+            @include position(absolute, $top: 30%, $left: -12px);
             @include font-primary($font-size-xxs, $color-white, $font-weight-normal);
             @include sizing(25px, 25px);
             background-color: $color-purple;
@@ -92,11 +89,9 @@
             font-size: $font-size-l;
             @include position(absolute, $top: 0.7em, $right: 1em);
         } 
-
         &__title {
             @include font-primary($font-size-m, $color-black, $font-weight-bold, 1.3em);
         }
-
         &__subtitle {
             @include font-primary($font-size-s, $color-black, $font-weight-light, 1.3em);
         }
@@ -110,53 +105,46 @@
             @include font-secondary($font-size-m, $color-white, $font-weight-normal);
             padding-bottom: 1em;
         }
-
         &__link {
             @include font-primary($font-size-xs, $color-white, $font-weight-light, 1.8em);
         }
-
         .footer-icon {
             @include sizing(30px)
         }
 }
 
 
-// MENU COMPONENT
+// MENU COMPONENTS
+
 .item-card {
     @include sizing(100%, 72px);
     border-radius: 15px;
     box-shadow: 0px 4.01px 15.04px 0px #0000001A;
     @include flex(row, space-between, center);
-
     &__content {
         @include flex(row, flex-start, center);
         @include sizing(100%);
     }
-
     &__txt {
         @include text-truncate;
         @include flex($align: flex-start);
         padding-left: 1em;
     }
-
     &__title {
         @include font-primary($font-size-m, $color-black, $font-weight-medium, 1.5em);
         @include text-truncate;
         width: 100%;
     }
-
     &__subtitle {
         @include font-primary($font-size-xs, $color-black, $font-weight-light);
         @include text-truncate;
         width: 100%;
     }
-
     &__price {
         place-self: flex-end;
         @include font-primary($font-size-xs, $color-black, $font-weight-bold);
         padding: 1em;
     }
-
     .select-trigger {
         background-color: $color-green-light;
         border-radius: 0 15px 15px 0;

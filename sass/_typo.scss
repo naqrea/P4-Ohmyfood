@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/__fonts/Roboto-Bold.ttf') format('truetype');
+  src: url('./assets/__fonts/Roboto-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/__fonts/Roboto-Medium.ttf') format('truetype');
+  src: url('./assets/__fonts/Roboto-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/__fonts/Roboto-Light.ttf') format('truetype');
+  src: url('./assets/__fonts/Roboto-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Shrikhand';
-  src: url('../assets/__fonts/Shrikhand-Regular.ttf') format('truetype');
+  src: url('./assets/__fonts/Shrikhand-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
